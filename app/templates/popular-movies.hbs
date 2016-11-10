@@ -1,0 +1,18 @@
+<section class="popular-movies">
+  <h2 class="section-title">Popular Movies</h2>
+
+  {{#if model.popularMoviesResults}}
+    <ul class="popular-movies-list">
+      {{#each model.popularMoviesResults as |popularMoviesResult index|}}
+        <li class="popular-movies-item">
+          <h3 class="title">{{popularMoviesResult.title}}</h3>
+          <p class="truncate">{{popularMoviesResult.overview}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="no-popular-movies">
+      Bummer! There are no movies that are popular at the moment...
+    </p>
+  {{/if}}
+</section>

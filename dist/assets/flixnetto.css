@@ -1,0 +1,77 @@
+/* Resets */
+body {
+  font-family: Helvetica, sans-serif;
+  color: #5f5e5e;
+}
+
+a {
+  text-decoration: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* Global */
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Nav bar */
+.nav-list {
+  border-bottom: 1px solid #d4d4d4;
+  list-style: none;
+  padding: 0;
+}
+.nav-list .nav-item {
+  display: inline-block;
+}
+.nav-list .nav-item:hover {
+  background-color: #5f5e5e;
+  border-radius: 3px;
+  transition-duration: 300ms;
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.nav-list .nav-item:hover a {
+  color: #fff;
+}
+.nav-list .nav-item a {
+  color: #5f5e5e;
+  display: inline-block;
+  padding: 10px;
+}
+.nav-list .nav-item a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Search bar */
+#input-movie-title {
+  background: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png') no-repeat left center;
+  background-size: 20px;
+  border: 1px solid #c7c7c7;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 5px 5px 5px 25px;
+  width: 50vw;
+}
+
+#btn-search {
+  background-color: #009ed0;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+/* Popular movies */
+.section-title {
+  color: #009ed0;
+}
