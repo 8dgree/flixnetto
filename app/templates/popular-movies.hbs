@@ -1,18 +1,31 @@
-<section class="popular-movies">
-  <h2 class="section-title">Popular Movies</h2>
+<section class="popular-movies-wrapper">
+  <h2 class="heading">Popular Movies</h2>
 
-  {{#if model.popularMoviesResults}}
-    <ul class="popular-movies-list">
-      {{#each model.popularMoviesResults as |popularMoviesResult index|}}
-        <li class="popular-movies-item">
-          <h3 class="title">{{popularMoviesResult.title}}</h3>
-          <p class="truncate">{{popularMoviesResult.overview}}</p>
-        </li>
-      {{/each}}
-    </ul>
-  {{else}}
-    <p class="no-popular-movies">
-      Bummer! There are no movies that are popular at the moment...
-    </p>
+  {{popular-movies/popular-movie-list
+    popularMovies=model.popularMovies
+    onPageChange=(route-action "onPageChange")
+    onSelectPreviousPage=(route-action "onSelectPreviousPage")
+    onSelectNextPage=(route-action "onSelectNextPage")
+    onViewMovieDetails=(route-action "onViewMovieDetails")}}
+
+  {{#if model.popularMovie.title}}
+    <section class="movie-details-wrapper">
+      <img class="movie-poster" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{model.popularMovie.poster_path}}" alt="{{model.popularMovie.title}}"/>
+
+      <div class="movie-details">
+        <h3 class="title">{{model.popularMovie.title}}</h3>
+
+        <aside class="rating">
+          <span>☆ {{model.popularMovie.vote_average}}</span>
+        </aside>
+
+        <h5 class="release-date">Released: {{model.popularMovie.release_date}}</h5>
+
+        <h4 class="subheading">Overview</h4>
+        <p class="overview">
+          {{model.popularMovie.overview}}
+        </p>
+      </div>
+    </section>
   {{/if}}
 </section>

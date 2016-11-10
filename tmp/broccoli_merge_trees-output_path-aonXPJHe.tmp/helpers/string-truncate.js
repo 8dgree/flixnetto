@@ -1,0 +1,1 @@
+/Users/yee/github/flixnetto/app/helpers/string-truncate.js
