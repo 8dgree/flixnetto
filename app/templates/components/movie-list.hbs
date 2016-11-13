@@ -1,0 +1,61 @@
+{{#if sortedMovies}}
+  <aside class="controls">
+    <div class="paging">
+      <button class="previous-page" disabled={{if isDisablePreviousPage "disabled"}} onclick={{action "onSelectPreviousPage" type searchTitle movies.page movies.total_pages}}>&lang;</button>
+      <p>Page&nbsp;
+        {{input
+        aria-label="current page number"
+        id="current-page-number"
+        name="current page number"
+        placeholder=""
+        type="text"
+        value=movies.page
+        focus-out=(action "onPageChange" type searchTitle movies.page movies.total_pages)
+        key-up=(action "onPageChange" type searchTitle movies.page movies.total_pages)}}
+
+        &nbsp;of {{movies.total_pages}}
+      </p>
+      <button class="next-page" disabled={{if isDisableNextPage "disabled"}} onclick={{action "onSelectNextPage" type searchTitle movies.page movies.total_pages}}>&rang;</button>
+    </div>
+
+    <form class="frm-sort">
+      <label for="lbl-sort-movies">
+        Sort by
+      </label>
+      <select id="sort-movies" onchange={{action "onSelectSort" value="target.value"}}>
+        {{#each sortOptions as | sortOption |}}
+          <option value={{sortOption.property}}>{{sortOption.label}}</option>
+        {{/each}}
+      </select>
+    </form>
+  </aside>
+
+  <ul class="list">
+    {{#each sortedMovies as | movie |}}
+      <li class="movie">
+        {{#link-to "index.movie-id" movie.id class="lnk-movie"}}
+          <div class="movie-info">
+            <h3 class="title">{{movie.title}}</h3>
+            <p class="overview">
+              {{#if movie.overview}}
+                {{string-truncate content=movie.overview maxLength=100 suffix="..."}}
+              {{else}}
+                No description available
+              {{/if}}
+            </p>
+          </div>
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+
+  {{outlet}}
+{{else}}
+  {{#if (eq type "popular")}}
+    <p class="no-popular-movies">Bummer! There are no movies that are popular at the moment...</p>
+  {{else if (eq type "search")}}
+    <p class="no-search-results">Bummer! Your search for "{{searchTitle}}" did not have any matches. Try different keyword(s)!</p>
+
+    <button id="btn-back" class="button" type="button" name="button" {{action "onBackToPopularMovies"}}>Back to Popular Movies</button>
+  {{/if}}
+{{/if}}

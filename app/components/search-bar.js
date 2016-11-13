@@ -16,14 +16,14 @@ export default Ember.Component.extend({
    */
   actions: {
     /**
-     * Gets the search keyword(s) (movie title) provided and bubbles this
-     * information up to route for further handling.
+     * Gets the search keyword(s) provided and bubbles this information up to
+     * "index" route for further handling.
      * @method onSearchMovie
-     * @param  {String} movieTitle - Movie title
+     * @param  {String} searchTitle - Search title
      * @return {undefined}
      */
-    onSearchMovie(movieTitle) {
-      this.attrs.onSearchMovie(movieTitle);
+    onSearchMovie(searchTitle) {
+      this.attrs.onSearchMovie(searchTitle);
     }
   }
 });

@@ -1,0 +1,11 @@
+<section class="movies-list-wrapper">
+  <h2 class="heading">Popular Movies</h2>
+
+  {{movie-list
+    movies=popularMovies
+    type="popular"
+    onBackToPopularMovies=(route-action "onBackToPopularMovies")
+    onPageChange=(route-action "onPageChange")
+    onSelectPreviousPage=(route-action "onSelectPreviousPage")
+    onSelectNextPage=(route-action "onSelectNextPage")}}
+</section>

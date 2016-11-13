@@ -12,7 +12,7 @@ moduleForComponent('search-bar', 'Integration | Component | search bar', {
 });
 
 test('"search-bar" component and its contents render', function(assert) {
-  assert.expect(1);
+  assert.expect(3);
 
   this.render(hbs`{{search-bar
                     onSearchMovie=(route-action onSearchMovie)}}`);

@@ -1,0 +1,17 @@
+{{search-bar
+  onSearchMovie=(action "onSearchMovie")}}
+
+{{#unless isShowPopularMovies}}
+  <section class="movies-list-wrapper">
+    <h2 class="heading">Search Results</h2>
+
+    {{movie-list
+      movies=movieSearchResults
+      searchTitle=searchTitle
+      type="search"
+      onBackToPopularMovies=(route-action "onBackToPopularMovies")
+      onPageChange=(route-action "onPageChange")
+      onSelectPreviousPage=(route-action "onSelectPreviousPage")
+      onSelectNextPage=(route-action "onSelectNextPage")}}
+  </section>
+{{/unless}}

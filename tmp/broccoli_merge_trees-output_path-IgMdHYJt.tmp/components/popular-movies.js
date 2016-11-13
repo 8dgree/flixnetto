@@ -1,0 +1,1 @@
+/Users/yee/github/flixnetto/app/components/popular-movies.js

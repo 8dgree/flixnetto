@@ -1,0 +1,10 @@
+{{movie-search
+  isShowPopularMovies=isShowPopularMovies
+  movieSearchResults=model.movieSearchResults
+  onBackToPopularMovies=(route-action "onBackToPopularMovies")
+  onSearchMovie=(route-action "onSearchMovie")}}
+
+{{#if isShowPopularMovies}}
+  {{popular-movies
+    popularMovies=model.popularMovies}}
+{{/if}}

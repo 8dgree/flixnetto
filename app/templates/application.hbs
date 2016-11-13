@@ -1,10 +1,5 @@
-<h1 id="app-name">Flixnetto</h1>
-
-<nav class="nav-wrapper">
-  <ul class="nav-list">
-    <li class="nav-item">{{#link-to "home"}}Home{{/link-to}}</li>
-    <li class="nav-item">{{#link-to "popular-movies"}}Popular Movies{{/link-to}}</li>
-  </ul>
-</nav>
+{{#link-to "index" movie.id class="lnk-home"}}
+  <h1 id="app-name">Flixnetto</h1>
+{{/link-to}}
 
 {{outlet}}

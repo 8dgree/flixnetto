@@ -1,0 +1,9 @@
+define('flixnetto/tests/unit/routes/index/movie-id-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/routes/index/movie-id-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/index/movie-id-test.js should pass jshint.');
+  });
+});
