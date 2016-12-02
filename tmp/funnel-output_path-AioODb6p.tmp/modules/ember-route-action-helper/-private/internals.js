@@ -1,1 +1,0 @@
-/Users/yee/github/flixnetto/tmp/funnel-input_base_path-JDl38yYl.tmp/0/-private/internals.js

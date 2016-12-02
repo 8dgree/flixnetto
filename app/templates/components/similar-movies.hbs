@@ -1,0 +1,19 @@
+<ul class="list-items">
+  {{#each similarMovies as | movie |}}
+    <li class="similar-movie">
+      {{#link-to "index.movie-id" movie.id class="lnk-movie"}}
+      <img class="movie-poster" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movie.poster_path}}" alt="{{movie.title}}" />
+        {{!-- <div class="movie-info">
+          <h3 class="title">{{movie.title}}</h3>
+          <p class="overview">
+            {{#if movie.overview}}
+              {{string-truncate content=movie.overview maxLength=100 suffix="..."}}
+            {{else}}
+              No description available
+            {{/if}}
+          </p>
+        </div> --}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>

@@ -1,26 +1,32 @@
 <section class="movie-details-wrapper">
-  {{#if model.movieInfo.poster_path}}
-    <img class="movie-poster" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{model.movieInfo.poster_path}}" alt="{{model.popularMovie.title}}"/>
-  {{else}}
-    <img class="movie-poster" src="http://www.hutchinsontires.com/helpers/img/no_image.jpg" alt="No movie poster"/>
-  {{/if}}
+  <div class="movie-details-inner-wrapper">
+    {{#if model.movieInfo.poster_path}}
+      <img class="movie-poster" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{model.movieInfo.poster_path}}" alt="{{model.popularMovie.title}}"/>
+    {{else}}
+      <img class="movie-poster" src="http://www.hutchinsontires.com/helpers/img/no_image.jpg" alt="No movie poster"/>
+    {{/if}}
 
-  <div class="movie-details">
-    <h3 class="title">{{model.movieInfo.title}}</h3>
+    <div class="movie-details">
+      <h3 class="title">{{model.movieInfo.title}}</h3>
 
-    <aside class="rating">
-      <span>☆ {{model.movieInfo.vote_average}}</span>
-    </aside>
+      <aside class="rating">
+        <span>☆ {{model.movieInfo.vote_average}}</span>
+      </aside>
 
-    <h5 class="release-date">Released: {{model.movieInfo.release_date}}</h5>
+      <h5 class="release-date">Released: {{model.movieInfo.release_date}}</h5>
 
-    <h4 class="subheading">Overview</h4>
-    <p class="overview">
-      {{#if model.movieInfo.overview}}
-        {{model.movieInfo.overview}}
-      {{else}}
-        No description available
-      {{/if}}
-    </p>
+      <h4 class="subheading">Overview</h4>
+      <p class="overview">
+        {{#if model.movieInfo.overview}}
+          {{model.movieInfo.overview}}
+        {{else}}
+          No description available
+        {{/if}}
+      </p>
+    </div>
   </div>
+
+  {{similar-movies
+    similarMovies=model.similarMovies}}
+
 </section>

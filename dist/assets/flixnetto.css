@@ -124,7 +124,8 @@ fieldset {
   color: #009ed0;
   margin-bottom: 0;
 }
-.movie-details-wrapper {
+.movie-details-wrapper .movie-details-inner-wrapper {
+  overflow: hidden;
 }
 .movie-details-wrapper p {
   font-size: 14px;
@@ -155,4 +156,14 @@ fieldset {
   display: inline-block;
   margin-left: 20px;
   padding: 2px 5px;
+}
+.movie-details-wrapper .similar-movies .list-items {
+  padding: 0;
+}
+.movie-details-wrapper .similar-movies .list-items .similar-movie {
+  display: inline-block;
+}
+.movie-details-wrapper .similar-movies .list-items .movie-poster {
+  height: 190px;
+  width: auto;
 }
